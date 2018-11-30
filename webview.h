@@ -36,12 +36,12 @@ extern "C" {
 #include <windows.h>
 #include <wininet.h>
 #include <commctrl.h>
-#include <exdisp.h>
+#include <ExDisp.h>
+#include <ExDispid.h>
 #include <mshtml.h>
 #include <mshtmhst.h>
 #include <shobjidl.h>
 #include <crtdbg.h>    // for _ASSERT()
-#include "ExDispid.h"
 
 #pragma comment(lib, "user32.lib")
 #pragma comment(lib, "ole32.lib")
@@ -57,7 +57,7 @@ extern "C" {
 #define WEBVIEW_DIALOG_FLAG_ALERT_MASK (3 << 1)
 
 //消息类
-#define WM_NEW_IEVIEW      WM_USER+101
+#define WM_NEW_IEVIEW       WM_USER+101
 #define WM_WEBVIEW_DISPATCH (WM_APP + 1)
 
 #define DEFAULT_URL                                                            \
@@ -107,7 +107,7 @@ static wchar_t Blank[] = {L"about:blank"};
 static unsigned char _IID_IHTMLWindow3[] = {0xae, 0xf4, 0x50, 0x30, 0xb5, 0x98, 0xcf, 0x11, 0xbb, 0x82, 0x00, 0xaa, 0x00, 0xbd, 0xce, 0x0b};
 
 // Some misc stuff used by our IDispatch
-static const BSTR    OnBeforeOnLoad = L"onbeforeunload";
+static const BSTR   OnBeforeOnLoad = L"onbeforeunload";
 static const WCHAR  BeforeUnload[] = L"beforeunload";
 
 extern void _webviewMouseNotify(void *arg);
